@@ -15,8 +15,5 @@ jobs:
     steps:
       - name: Say hello
         run: echo "Hello"
-  repo-name:
-      needs: greet
-      - name: Name of repo
-        run: echo " the github repo is ${{ github.repository }} " 
+
       
