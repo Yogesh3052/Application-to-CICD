@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Roamwell curates slow travel for curious people." />
+  <title>Roamwell — Travel, thoughtfully chosen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Roamwell home"><span class="brand-mark">◒</span> roamwell</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="active" href="#discover">Discover</a>
+      <a href="#journal">Journal</a>
+      <a href="#about">Our ethos</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-button" id="savedButton" aria-label="View saved trips" title="Saved trips"><i data-lucide="bookmark"></i><span class="saved-count">0</span></button>
+      <button class="avatar" aria-label="Open profile">AT</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="discover">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> The considered travel guide</p>
+        <h1>Go somewhere<br /><em>that stays</em> with you.</h1>
+        <p class="hero-intro">Handpicked places, unhurried stays, and local rituals for travelers who like to leave a little room for wonder.</p>
+        <div class="search-bar">
+          <i data-lucide="search"></i>
+          <input id="searchInput" type="search" placeholder="Search a place, feeling, or ritual" autocomplete="off" />
+          <button id="searchButton">Explore <i data-lucide="arrow-up-right"></i></button>
+        </div>
+        <div class="quick-searches" aria-label="Popular searches">
+          <span>Try</span>
+          <button data-query="coastal">coastal</button>
+          <button data-query="mountain">mountain air</button>
+          <button data-query="slow food">slow food</button>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=85" alt="Tokyo skyline at dusk" />
+          <div class="image-caption"><span>01 / 06</span><strong>Tokyo, Japan</strong><small>After dark, in a city of small wonders</small></div>
+        </div>
+        <div class="floating-note"><i data-lucide="sun"></i><span>Best in<br /><strong>October</strong></span></div>
+        <div class="vertical-label">NOT A BUCKET LIST</div>
+      </div>
+    </section>
+
+    <section class="explore-section" id="journal">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span></span> A slower scroll</p><h2>Places with a pulse.</h2></div>
+        <div class="section-controls"><span id="resultCount">06 places</span><button class="round-button" id="prevButton" aria-label="Previous places"><i data-lucide="arrow-left"></i></button><button class="round-button" id="nextButton" aria-label="Next places"><i data-lucide="arrow-right"></i></button></div>
+      </div>
+      <div class="filter-row" role="tablist" aria-label="Filter destinations">
+        <button class="filter active" data-filter="all">All places</button>
+        <button class="filter" data-filter="coastal">Coastal</button>
+        <button class="filter" data-filter="mountain">Mountain</button>
+        <button class="filter" data-filter="city">City energy</button>
+        <button class="filter" data-filter="countryside">Countryside</button>
+      </div>
+      <div class="destination-grid" id="destinationGrid">
+        <article class="destination-card featured" data-category="coastal" data-search="amorgos coastal island sea greek quiet">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=900&q=85" alt="Blue sea beside a Greek island" /><button class="save-button" aria-label="Save Amorgos" data-name="Amorgos"><i data-lucide="bookmark"></i></button><span class="card-tag">Island quiet</span></div>
+          <div class="card-meta"><div><h3>Amorgos</h3><p>Greece <span>·</span> Aegean Sea</p></div><span class="card-number">01</span></div>
+        </article>
+        <article class="destination-card" data-category="mountain" data-search="dolomites mountain italy alpine hiking cabin">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=85" alt="Misty mountain peaks in the Dolomites" /><button class="save-button" aria-label="Save Dolomites" data-name="Dolomites"><i data-lucide="bookmark"></i></button><span class="card-tag">High country</span></div>
+          <div class="card-meta"><div><h3>Dolomites</h3><p>Italy <span>·</span> South Tyrol</p></div><span class="card-number">02</span></div>
+        </article>
+        <article class="destination-card" data-category="city" data-search="kyoto city japan tea temple ritual culture">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=85" alt="Traditional street in Kyoto" /><button class="save-button" aria-label="Save Kyoto" data-name="Kyoto"><i data-lucide="bookmark"></i></button><span class="card-tag">Old soul</span></div>
+          <div class="card-meta"><div><h3>Kyoto</h3><p>Japan <span>·</span> Kansai</p></div><span class="card-number">03</span></div>
+        </article>
+        <article class="destination-card" data-category="countryside" data-search="alentejo countryside portugal slow food vineyard sun">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85" alt="Green valley and rolling hills" /><button class="save-button" aria-label="Save Alentejo" data-name="Alentejo"><i data-lucide="bookmark"></i></button><span class="card-tag">Open horizons</span></div>
+          <div class="card-meta"><div><h3>Alentejo</h3><p>Portugal <span>·</span> The interior</p></div><span class="card-number">04</span></div>
+        </article>
+        <article class="destination-card" data-category="coastal" data-search="puglia coastal italy food village sea sun">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=900&q=85" alt="Coastal town in Puglia" /><button class="save-button" aria-label="Save Puglia" data-name="Puglia"><i data-lucide="bookmark"></i></button><span class="card-tag">Long lunches</span></div>
+          <div class="card-meta"><div><h3>Puglia</h3><p>Italy <span>·</span> Valle d'Itria</p></div><span class="card-number">05</span></div>
+        </article>
+        <article class="destination-card" data-category="mountain" data-search="patagonia mountain chile wild landscape adventure">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1478827536114-da961b7e9b3e?auto=format&fit=crop&w=900&q=85" alt="Dramatic Patagonia mountains" /><button class="save-button" aria-label="Save Patagonia" data-name="Patagonia"><i data-lucide="bookmark"></i></button><span class="card-tag">Wild edge</span></div>
+          <div class="card-meta"><div><h3>Patagonia</h3><p>Chile <span>·</span> The far south</p></div><span class="card-number">06</span></div>
+        </article>
+      </div>
+      <div class="empty-state" id="emptyState"><i data-lucide="compass"></i><h3>Nothing quite here yet.</h3><p>Try a different place, mood, or landscape.</p></div>
+    </section>
+
+    <section class="manifesto" id="about"><div class="manifesto-mark">◒</div><div><p class="eyebrow">Why roamwell exists</p><h2>Travel is not<br /><em>elsewhere.</em></h2></div><p class="manifesto-copy">It is the quality of your attention. We find the places that make you look up from your phone, stay for one more song, and remember that a day can be wonderfully unproductive.</p><a class="text-link" href="#discover">Read our ethos <i data-lucide="arrow-up-right"></i></a></section>
+  </main>
+
+  <div class="toast" id="toast" role="status"><i data-lucide="check"></i><span>Saved to your collection</span></div>
+  <div class="modal-backdrop" id="modalBackdrop"><div class="saved-modal"><button class="modal-close" id="modalClose" aria-label="Close saved trips"><i data-lucide="x"></i></button><p class="eyebrow">Your collection</p><h2>Saved places.</h2><div id="savedList"></div></div></div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>
