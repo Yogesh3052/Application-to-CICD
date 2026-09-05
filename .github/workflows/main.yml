@@ -1,0 +1,22 @@
+#workflow
+#Jobs
+#steps
+#actions
+
+name: Hello
+
+on:
+  push:
+    branches: [ main ]
+  
+jobs: 
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "Hello"
+  repo-name:
+      needs: greet
+      - name: Name of repo
+        run: echo " the github repo is ${{ github.repository }} " 
+      
