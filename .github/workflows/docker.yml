@@ -25,4 +25,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: Application-CICD/my-app:latest
+          tags: ${{ vars.DOCKER_USERNAME }}/my-app:latest
