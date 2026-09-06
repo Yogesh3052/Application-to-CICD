@@ -22,4 +22,7 @@ jobs:
           pip install -r requirements-dev.txt
 
       - name: code linter
-        run: ruff check .
+        run: ruff check . --fix
+
+      - name: code test
+        run: pytest 
